@@ -27,6 +27,7 @@ public class AccountController extends BaseController{
         AboutResponse aboutResponse = AboutResponse.builder()
                 .username(account.getUsername())
                 .fullName(account.getFullName())
+                .phoneNumber(account.getPhoneNumber())
                 .build();
 
         return getResponseOk(aboutResponse, "Register Success");

@@ -2,13 +2,13 @@ package com.divary.authentication.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Builder
 public class BaseResponse<T> {
-
     private T data;
 
     private int code;
@@ -17,6 +17,6 @@ public class BaseResponse<T> {
 
     private String message;
 
-//    private final LocalDateTime time = LocalDateTime.now();
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private final LocalDateTime time = LocalDateTime.now();
 }
